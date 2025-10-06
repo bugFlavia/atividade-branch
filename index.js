@@ -12,3 +12,25 @@ function login(usuario, senha) {
 
 console.log(login("ad", "12"));  
 console.log(login("admin", "1234")); 
+
+
+// cadastroUsuario.js
+function cadastrarUsuario(nome, email, senha) {
+    if (!nome || !email || !senha) {
+        return "Todos os campos são obrigatórios.";
+    }
+
+    if (senha.length < 4) {
+        return "A senha deve ter pelo menos 4 caracteres.";
+    }
+
+    return {
+        nome: nome,
+        email: email,
+        senha: senha
+    };
+}
+
+console.log(cadastrarUsuario("", "maria@email.com", "1234"));   // erro
+console.log(cadastrarUsuario("Maria", "maria@email.com", "12")); // erro
+console.log(cadastrarUsuario("Maria", "maria@email.com", "1234")); // sucesso
