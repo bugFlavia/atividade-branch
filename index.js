@@ -36,15 +36,21 @@ console.log(cadastrarUsuario("Maria", "maria@email.com", "12")); // erro
 console.log(cadastrarUsuario("Maria", "maria@email.com", "1234")); // sucesso
 
 // listagemProdutos.js
-function listarProdutos() {
+function listarProdutos(precoMaximo = null) {
     const produtos = [
         { id: 1, nome: "Camiseta", preco: 50 },
         { id: 2, nome: "Calça Jeans", preco: 120 },
         { id: 3, nome: "Tênis", preco: 200 }
     ];
 
+    if (precoMaximo !== null) {
+        return produtos.filter(p => p.preco <= precoMaximo);
+    }
+
     return produtos;
 }
 
-console.log(listarProdutos());
+console.log("Todos os produtos:", listarProdutos());
+console.log("Produtos até R$100:", listarProdutos(100));
+
 
