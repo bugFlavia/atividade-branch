@@ -53,4 +53,16 @@ function listarProdutos(precoMaximo = null) {
 console.log("Todos os produtos:", listarProdutos());
 console.log("Produtos até R$100:", listarProdutos(100));
 
+// carrinhoCompras.js
+const carrinho = [];
+
+function adicionarProduto(produto) {
+    carrinho.push(produto);
+    return carrinho;
+}
+
+console.log(adicionarProduto({ id: 1, nome: "Camiseta", preco: 50 }));
+console.log(adicionarProduto({ id: 2, nome: "Calça Jeans", preco: 120 }));
+
+
 
