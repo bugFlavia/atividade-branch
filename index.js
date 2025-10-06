@@ -83,8 +83,15 @@ console.log("Carrinho após remover:", carrinho);
 console.log("Total após remover:", calcularTotal());
 
 // pagamento.js
+const formasAceitas = ["Cartão de Crédito", "Boleto", "Pix"];
+
 function realizarPagamento(valor, formaPagamento) {
+    if (valor <= 0) return "Valor inválido para pagamento.";
+    if (!formasAceitas.includes(formaPagamento)) return "Forma de pagamento não aceita.";
     return `Pagamento de R$${valor} realizado via ${formaPagamento}.`;
 }
 
-console.log(realizarPagamento(170, "Cartão de Crédito"));
+// Testes
+console.log(realizarPagamento(-10, "Pix")); // Valor inválido
+console.log(realizarPagamento(170, "Dinheiro")); // Forma não aceita
+console.log(realizarPagamento(170, "Cartão de Crédito")); // Sucesso
