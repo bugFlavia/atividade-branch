@@ -34,3 +34,17 @@ function cadastrarUsuario(nome, email, senha) {
 console.log(cadastrarUsuario("", "maria@email.com", "1234"));   // erro
 console.log(cadastrarUsuario("Maria", "maria@email.com", "12")); // erro
 console.log(cadastrarUsuario("Maria", "maria@email.com", "1234")); // sucesso
+
+// listagemProdutos.js
+function listarProdutos() {
+    const produtos = [
+        { id: 1, nome: "Camiseta", preco: 50 },
+        { id: 2, nome: "Calça Jeans", preco: 120 },
+        { id: 3, nome: "Tênis", preco: 200 }
+    ];
+
+    return produtos;
+}
+
+console.log(listarProdutos());
+
