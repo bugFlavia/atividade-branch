@@ -12,3 +12,15 @@ function login(usuario, senha) {
 
 console.log(login("ad", "12"));  
 console.log(login("admin", "1234")); 
+
+
+// cadastroUsuario.js
+function cadastrarUsuario(nome, email, senha) {
+    return {
+        nome: nome,
+        email: email,
+        senha: senha
+    };
+}
+
+console.log(cadastrarUsuario("Maria", "maria@email.com", "1234"));
