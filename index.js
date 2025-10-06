@@ -98,11 +98,16 @@ console.log(realizarPagamento(170, "Cartão de Crédito")); // Sucesso
 
 // dashboard.js
 function gerarDashboard(usuario, totalVendas, totalPedidos) {
+    const mediaVenda = totalPedidos > 0 ? (totalVendas / totalPedidos).toFixed(2) : 0;
     return {
         usuario: usuario,
         totalVendas: totalVendas,
-        totalPedidos: totalPedidos
+        totalPedidos: totalPedidos,
+        mediaVenda: mediaVenda
     };
 }
 
+// Testes
 console.log(gerarDashboard("Admin", 1500, 25));
+console.log(gerarDashboard("Maria", 0, 0));
+
