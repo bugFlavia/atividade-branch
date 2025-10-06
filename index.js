@@ -82,6 +82,9 @@ removerProduto(1);
 console.log("Carrinho após remover:", carrinho);
 console.log("Total após remover:", calcularTotal());
 
+// pagamento.js
+function realizarPagamento(valor, formaPagamento) {
+    return `Pagamento de R$${valor} realizado via ${formaPagamento}.`;
+}
 
-
-
+console.log(realizarPagamento(170, "Cartão de Crédito"));
