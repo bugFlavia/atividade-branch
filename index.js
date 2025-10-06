@@ -95,3 +95,14 @@ function realizarPagamento(valor, formaPagamento) {
 console.log(realizarPagamento(-10, "Pix")); // Valor inválido
 console.log(realizarPagamento(170, "Dinheiro")); // Forma não aceita
 console.log(realizarPagamento(170, "Cartão de Crédito")); // Sucesso
+
+// dashboard.js
+function gerarDashboard(usuario, totalVendas, totalPedidos) {
+    return {
+        usuario: usuario,
+        totalVendas: totalVendas,
+        totalPedidos: totalPedidos
+    };
+}
+
+console.log(gerarDashboard("Admin", 1500, 25));
