@@ -61,8 +61,27 @@ function adicionarProduto(produto) {
     return carrinho;
 }
 
-console.log(adicionarProduto({ id: 1, nome: "Camiseta", preco: 50 }));
-console.log(adicionarProduto({ id: 2, nome: "Calça Jeans", preco: 120 }));
+function removerProduto(id) {
+    const index = carrinho.findIndex(p => p.id === id);
+    if (index !== -1) {
+        carrinho.splice(index, 1);
+    }
+    return carrinho;
+}
+
+function calcularTotal() {
+    return carrinho.reduce((total, p) => total + p.preco, 0);
+}
+
+// Testes
+adicionarProduto({ id: 1, nome: "Camiseta", preco: 50 });
+adicionarProduto({ id: 2, nome: "Calça Jeans", preco: 120 });
+console.log("Carrinho:", carrinho);
+console.log("Total:", calcularTotal());
+removerProduto(1);
+console.log("Carrinho após remover:", carrinho);
+console.log("Total após remover:", calcularTotal());
+
 
 
 
